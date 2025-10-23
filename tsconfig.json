@@ -1,0 +1,17 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "module": "NodeNext", // Usar a resolução de módulos do Node.js mais recente
+    "moduleResolution": "NodeNext", // Necessário para 'type: module'
+    "target": "ES2022", // Versão moderna do JavaScript
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
