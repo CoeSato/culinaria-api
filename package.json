@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "migrate": "node ./node_modules/drizzle-kit/cli.js migrate",
+    "migrate": "node ./node_modules/.bin/drizzle-kit migrate",
     "deploy": "npm run build && npm run migrate && npm start"
   },
   "keywords": [],
