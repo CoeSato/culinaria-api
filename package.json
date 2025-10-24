@@ -4,11 +4,11 @@
   "description": "",
   "main": "src/server.ts",
   "scripts": {
-    "build": "tsc", 
-    "start": "node dist/server.js", 
-    "migrate": "drizzle-kit migrate", 
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "migrate": "npx drizzle-kit migrate",
     "deploy": "npm run build && npm run migrate && npm start"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
