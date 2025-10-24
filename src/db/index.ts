@@ -8,18 +8,18 @@ import * as schema from './schema.js';
 const DATABASE_URL = process.env.DATABASE_URL;
 
 if (!DATABASE_URL) {
-  console.error("ERRO: A variável de ambiente DATABASE_URL não está configurada.");
-  process.exit(1);
+  console.error("ERRO: A variável de ambiente DATABASE_URL não está configurada.");
+  process.exit(1);
 }
 
 // Criação do Pool de Conexão usando a URL completa
 // O Pool lida melhor com conexões concorrentes
 const pool = new Pool({
-  connectionString: DATABASE_URL,
-  // **CRUCIAL:** O host externo (public domain) exige SSL
-  ssl: { 
-    rejectUnauthorized: false // Desabilita a verificação de certificado (necessário em alguns ambientes cloud)
-  }, 
+  connectionString: DATABASE_URL,
+  // **CRUCIAL:** O host externo (public domain) exige SSL
+  ssl: { 
+    rejectUnauthorized: false // Desabilita a verificação de certificado (necessário em alguns ambientes cloud)
+  }, 
 });
 
 // A conexão é estabelecida à medida que as queries chegam.
