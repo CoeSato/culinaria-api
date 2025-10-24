@@ -4,9 +4,9 @@
   "description": "",
   "main": "src/server.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "node dist/server.js",
-    "migrate": "node ./node_modules/.bin/drizzle-kit migrate",
+    "migrate": "npx drizzle-kit migrate",
     "deploy": "npm run build && npm run migrate && npm start"
   },
   "keywords": [],
