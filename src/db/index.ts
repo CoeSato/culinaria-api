@@ -1,15 +1,27 @@
-import 'dotenv/config';
+// Exemplo de código CORRIGIDO usando variáveis separadas (Recomendado pelo Railway)
+import { Pool } from 'pg'; 
 import { drizzle } from 'drizzle-orm/node-postgres';
-import { Client } from 'pg';
-import * as schema from './schema.js';
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
+// 1. Verifique as variáveis de ambiente necessárias
+const PGHOST = process.env.PGHOST;
+const PGUSER = process.env.PGUSER;
+const PGPASSWORD = process.env.PGPASSWORD;
+const PGDATABASE = process.env.PGDATABASE;
+const PGPORT = process.env.PGPORT ? parseInt(process.env.PGPORT) : 5432;
+
+if (!PGHOST || !PGUSER || !PGPASSWORD || !PGDATABASE) {
+  throw new Error("As variáveis de ambiente do PostgreSQL (PGHOST, PGUSER, PGPASSWORD, PGDATABASE) devem ser configuradas.");
+}
+
+// 2. Crie o Pool de conexão usando as variáveis separadas
+const pool = new Pool({
+  host: PGHOST,
+  user: PGUSER,
+  password: PGPASSWORD,
+  database: PGDATABASE,
+  port: PGPORT,
+  // Adicione outras configurações de segurança se necessário (ex: ssl)
+  // ssl: { rejectUnauthorized: false } 
 });
 
-client.connect().catch(err => {
-  console.error('Erro ao conectar ao banco de dados:', err);
-  process.exit(1);
-});
-
-export const db = drizzle(client, { schema });
+export const db = drizzle(pool);
