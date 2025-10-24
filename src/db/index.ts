@@ -17,9 +17,7 @@ if (!DATABASE_URL) {
 const pool = new Pool({
   connectionString: DATABASE_URL,
   // **CRUCIAL:** O host externo (public domain) exige SSL
-  ssl: { 
-    rejectUnauthorized: false // Desabilita a verificação de certificado (necessário em alguns ambientes cloud)
-  }, 
+  ssl: true,
 });
 
 // A conexão é estabelecida à medida que as queries chegam.
