@@ -1,0 +1,22 @@
+# Dependências do Node
+/node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variáveis de Ambiente e Segredos
+.env
+.env.*
+
+# Output de Build/Compilação
+/dist
+/build
+
+# Drizzle Kit
+/drizzle/meta
+/drizzle/schema.ts
+
+# Arquivos temporários
+*.log
