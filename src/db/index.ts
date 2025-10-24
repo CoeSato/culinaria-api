@@ -16,8 +16,10 @@ if (!DATABASE_URL) {
 // O Pool lida melhor com conexões concorrentes
 const pool = new Pool({
   connectionString: DATABASE_URL,
-  // **Recomendado:** Se o seu DB Railway exigir SSL (o que é o padrão):
-  // ssl: true, 
+  // **CRUCIAL:** O host externo (public domain) exige SSL
+  ssl: { 
+    rejectUnauthorized: false // Desabilita a verificação de certificado (necessário em alguns ambientes cloud)
+  }, 
 });
 
 // A conexão é estabelecida à medida que as queries chegam.
