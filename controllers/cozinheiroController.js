@@ -1,4 +1,4 @@
-const { getCozinheirosDB, getCozinheiroPorCodigoDB, addCozinheirosDB, updateCozinheirosB, deleteCozinheirosDB} = require('../usecases/cozinheiroUseCases')
+const { getCozinheirosDB, getCozinheiroPorCodigoDB, addCozinheirosDB, updateCozinheirosDB, deleteCozinheirosDB} = require('../usecases/cozinheiroUseCases')
 
 const getCozinheiros = async (request, response) => {
     await getCozinheirosDB()
