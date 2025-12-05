@@ -1,7 +1,6 @@
 class Usuario {
-    constructor(email, senha, tipo, telefone, nome) { // ⬅️ Adicionando 'senha' ao construtor
+    constructor(email, tipo, telefone, nome) {
         this.email = email;
-        this.senha = senha; // ⬅️ Atribuindo a senha
         this.tipo = tipo;
         this.telefone = telefone;
         this.nome = nome;
