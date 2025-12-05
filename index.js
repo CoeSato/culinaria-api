@@ -24,7 +24,6 @@ app.use(express.urlencoded({extended:false}));
 // E 'https://seu-backend.onrender.com' pela URL REAL do seu Backend no Render
 const allowedOrigins = [
     'http://localhost:3000', 
-    'https://culinaria-compartilhada.onrender.com', // Exemplo: URL do seu frontend no Render
     'https://culinaria-api.onrender.com'           // Exemplo: URL do seu backend no Render
 ];
 
